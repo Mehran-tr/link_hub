@@ -15,6 +15,9 @@ class CreateLinkCategoryRelationsTable extends Migration
     {
         Schema::create('link_category_relations', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('link_id');
+            $table->bigInteger('category_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
