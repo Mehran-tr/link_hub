@@ -15,6 +15,8 @@ class CreateStarsTable extends Migration
     {
         Schema::create('stars', function (Blueprint $table) {
             $table->id();
+            $table->float('star');
+            $table->bigInteger('link_id');
             $table->timestamps();
         });
     }

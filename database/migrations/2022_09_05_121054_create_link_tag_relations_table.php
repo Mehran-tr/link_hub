@@ -15,6 +15,9 @@ class CreateLinkTagRelationsTable extends Migration
     {
         Schema::create('link_tag_relations', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('link_id');
+            $table->bigInteger('tag_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
