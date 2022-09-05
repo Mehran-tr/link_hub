@@ -18,4 +18,9 @@ class LinkTagRelation extends Model
         "created_at",
         "updated_at"
     ];
+
+    public function tag()
+    {
+        return $this->belongsTo(Tag::class);
+    }
 }
