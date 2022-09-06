@@ -13,7 +13,7 @@ class StoreStarRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class StoreStarRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "star"    => "required|string",
+            "link_id" => "required|string"
         ];
     }
 }

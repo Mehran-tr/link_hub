@@ -13,7 +13,7 @@ class UpdateStarRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class UpdateStarRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "id"      => "required|integer",
+            "star"    => "string",
+            "link_id" => "string"
         ];
     }
 }

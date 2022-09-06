@@ -13,7 +13,7 @@ class UpdateLinkRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class UpdateLinkRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "id"             => "required|integer",
+            "title"          => "string|min:3",
+            "description"    => "string",
+            "author"         => "string|min:5",
+            "resource_url"   => "string",
+            "status"         => "integer",
+            "total_click"    => "integer",
         ];
     }
 }
