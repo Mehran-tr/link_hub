@@ -10,7 +10,8 @@ jobs:
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
-
+      - name: Composer (php-actions)
+        uses: php-actions/composer@v6.0.0
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -24,6 +25,7 @@ jobs:
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
+        run: composer update
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
