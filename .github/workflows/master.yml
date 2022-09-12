@@ -25,6 +25,7 @@ jobs:
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
+      - name: composer update
         run: composer update
 
       - name: 📂 Sync files
