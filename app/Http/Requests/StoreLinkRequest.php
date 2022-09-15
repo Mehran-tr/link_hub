@@ -24,7 +24,10 @@ class StoreLinkRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "title"          => "required|string|min:3",
+            "description"    => "required|string",
+            "author"         => "required|string|min:5",
+            "resource_url"   => "required|string",
         ];
     }
 }
