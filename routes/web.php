@@ -13,9 +13,4 @@ use \App\Http\Controllers\LinkController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::resource('link', LinkController::class);
+Route::resource('/', LinkController::class);
