@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Link;
 use App\Http\Requests\StoreLinkRequest;
 use App\Http\Requests\UpdateLinkRequest;
+use Illuminate\View\View;
 
 class LinkController extends Controller
 {
@@ -12,22 +13,28 @@ class LinkController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return View
+
      */
-    public function index()
+    public function index(): View
     {
+
         $data['links'] = Link::paginate(12);
         $data['pageTitle'] = 'Link Article';
 
 
         return view('link.index',$data);
+
+
     }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return View
      */
-    public function create()
+    public function create() :View
     {
         $data['pageTitle'] = 'Add new Link';
         return view('link.add',$data);
