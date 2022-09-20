@@ -8,7 +8,7 @@
             <div class="row g-5">
 
                 <div class="col-md-7 col-lg-8">
-                    <h4 class="mb-3">Add Link</h4>
+                    <h4 class="mb-3">Add new Link</h4>
                     <form class="needs-validation" method="POST" action="{{route('link.store')}}" novalidate>
                         @csrf
                         <div class="row g-3">
@@ -54,7 +54,8 @@
                     </form>
                 </div>
             </div>
+
         </main>
 
-
+    </div>
  @endsection

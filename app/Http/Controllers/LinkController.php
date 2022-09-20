@@ -11,22 +11,26 @@ class LinkController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
+        $data['links'] = Link::paginate(12);
+        $data['pageTitle'] = 'Link Article';
 
-        return view('link.index');
+
+        return view('link.index',$data);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
-        return view('link.add');
+        $data['pageTitle'] = 'Add new Link';
+        return view('link.add',$data);
     }
 
     /**
