@@ -11,12 +11,13 @@
                     <img class="center-block" style="width: 50%;display: block;margin-left: auto;margin-right: auto;" src="{{asset('img/laravel.svg')}}" alt="" />
                     <div class="card-body">
                         <a style="text-decoration: none !important" href="{{$link->resource_url}}" target="_blank"> <h5 class="card-text">{{$link->title}}</h5></a>
+                                <hr>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <br />
-                                <h6>{{$link->author}}</h6>
+                                <p>Author: {{$link->author}}</p>
                             </div>
-                            <small class="text-muted">{{$link->updated_at}}</small>
+                            <small class="text-muted">Total view :10</small>
                         </div>
                     </div>
                 </div>

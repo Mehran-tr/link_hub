@@ -20,6 +20,7 @@ class LinkController extends Controller
     {
 
         $data['links'] = Link::paginate(12);
+        $data['linkCount'] = count(Link::all());
         $data['pageTitle'] = 'Link Article';
 
 
