@@ -3,7 +3,7 @@
 
 
 ## Link hub project
-In this project you can save your links 
+In this project you can save your links (It`s not complete yet!)
 
 currently  this project is with Laravel 8 and PHP 7.3
 

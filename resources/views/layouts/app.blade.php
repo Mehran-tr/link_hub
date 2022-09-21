@@ -77,14 +77,14 @@
             <div class="row">
                 <div class="col-sm-8 col-md-7 py-4">
                     <h4 class="text-white">About</h4>
-                    <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+                    <p class="text-muted">In this Website you can save and share your links</p>
                 </div>
                 <div class="col-sm-4 offset-md-1 py-4">
-                    <h4 class="text-white">Contact</h4>
+                    <h4 class="text-white">Follow us</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                        <li><a href="#" class="text-white">Like on Facebook</a></li>
-                        <li><a href="#" class="text-white">Email me</a></li>
+                        <li><a target="_blank" href="https://github.com/Mehran-tr/" class="text-white">Mehran Taheri</a></li>
+                        <li><a target="_blank" href="https://github.com/usermp" class="text-white">Mohammad Yeganeh</a></li>
+                        <li><a target="_blank" href="#" class="text-white">Follow Us on Instagram</a></li>
                     </ul>
                 </div>
             </div>
@@ -93,7 +93,7 @@
     <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
             <a href="{{route('index')}}" class="navbar-brand d-flex align-items-center">
-                <strong>Laravel Article</strong></a>
+                <strong>{{$headerTitle}}</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -106,10 +106,10 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">+ {{$linkCount}} Laravel Articles</h1>
-                <p class="lead text-muted">Everyone can learn Laravel, but you can learn more tricks with us .</p>
+                <h1 class="fw-light">+ {{$linkCount}} {{$headerTitle}}</h1>
+                <p class="lead text-muted">{{$headerText}}</p>
                 <p>
-                    <a href="#" class="btn btn-primary my-2">Submit New Article</a>
+                    <a href="{{route('create')}}" class="btn btn-primary my-2">Submit New Article</a>
                     <a href="#" class="btn btn-secondary my-2">Donate US</a>
                 </p>
             </div>
@@ -127,8 +127,7 @@
         <p class="float-end mb-1">
             <a href="#">Back to top</a>
         </p>
-        <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.2/getting-started/introduction/">getting started guide</a>.</p>
+        <p class="mb-1">Developed by : <a target="_blank" href="https://mehrantaheri.ir">Mehran Taheri</a> | <a target="_blank" href="https://mpdev.ir/">Mohammad Yeganeh</a></p>
     </div>
 </footer>
 
