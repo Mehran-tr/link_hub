@@ -19,9 +19,9 @@ class CreateLinksTable extends Migration
             $table->longText('description');
             $table->string('author');
             $table->string('resource_url');
-            $table->tinyInteger('status');
-            $table->string('lang');
-            $table->string('total_click');
+            $table->tinyInteger('status')->default(1);
+            $table->string('lang')->default('fa');
+            $table->integer('total_click')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });
