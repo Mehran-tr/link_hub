@@ -8,16 +8,17 @@
             <div class="col" >
                 <div class="card shadow-sm" >
 
-                    <img class="center-block" style="width: 50%;display: block;margin-left: auto;margin-right: auto;" src="{{asset('img/laravel.svg')}}" alt="" />
+                    <img class="center-block" style="width: 50%;display: block;margin-left: auto;margin-right: auto; margin-top: 20px" src="{{asset('img/laravel.svg')}}" alt="" />
                     <div class="card-body">
                         <a style="text-decoration: none !important" href="{{$link->resource_url}}" target="_blank" rel="nofollow"> <h6 class="card-text">{{$link->title}}</h6></a>
                                 <hr>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <br />
-                                <p>Author: {{$link->author}}</p>
+                        <div class="d-flex justify-content-between">
+                            <div class="col-md-6 " >
+                                <small class="text-muted">Author: {{$link->author}}</small>
                             </div>
-                            <small class="text-muted">Total view :10</small>
+                            <div class="col-md-6" style="text-align: right !important;">
+                                <small class="text-muted">Total view :10</small>
+                            </div>
                         </div>
                     </div>
                 </div>
