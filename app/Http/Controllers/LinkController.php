@@ -36,6 +36,7 @@ class LinkController extends Controller
      */
     public function create() :View
     {
+
         $data['pageTitle'] = 'Add new Link';
         return view('link.add',$data);
     }
@@ -53,7 +54,7 @@ class LinkController extends Controller
         $link->description = $request->description;
         $link->author = $request->author;
         $link->resource_url = $request->resource_url;
-        $link->status = 1;
+        $link->status = 0;
 
         if($link){
             return redirect()->route('index')->with('success','Successfully added new Link');
@@ -65,7 +66,7 @@ class LinkController extends Controller
     public function redirect($id)
     {
         $link = Link::find($id);
-        $link->total_click = +1;
+        $link->total_click = $link->total_click+1;
         $link->save();
         return Redirect::to($link->resource_url);
     }
