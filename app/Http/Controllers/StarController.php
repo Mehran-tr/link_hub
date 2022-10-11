@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Star;
 use App\Http\Requests\StoreStarRequest;
 use App\Http\Requests\UpdateStarRequest;
+use Illuminate\Support\Facades\Blade;
 
 class StarController extends Controller
 {
@@ -15,7 +16,7 @@ class StarController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -83,5 +84,5 @@ class StarController extends Controller
     {
         //
     }
-    
+
 }

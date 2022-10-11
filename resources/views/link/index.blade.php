@@ -10,14 +10,14 @@
 
                     <img class="center-block" style="width: 50%;display: block;margin-left: auto;margin-right: auto; margin-top: 20px" src="{{asset('img/laravel.svg')}}" alt="" />
                     <div class="card-body">
-                        <a style="text-decoration: none !important" href="{{$link->resource_url}}" target="_blank" rel="nofollow"> <h6 class="card-text">{{$link->title}}</h6></a>
+                        <a style="text-decoration: none !important" href="{{route('redirect',$link->id)}}" target="_blank" rel="nofollow"> <h6 class="card-text">{{$link->title}}</h6></a>
                                 <hr>
                         <div class="d-flex justify-content-between">
                             <div class="col-md-6 " >
                                 <small class="text-muted">Author: {{$link->author}}</small>
                             </div>
                             <div class="col-md-6" style="text-align: right !important;">
-                                <small class="text-muted">Total view :10</small>
+                                <small class="text-muted">Total view :@if(!empty($link->total_click)) {{$link->total_click}}@else 0 @endif</small>
                             </div>
                         </div>
                     </div>
