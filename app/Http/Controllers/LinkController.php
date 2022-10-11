@@ -20,7 +20,7 @@ class LinkController extends Controller
     public function index(): View
     {
 
-        $data['links'] = Link::paginate(12);
+        $data['links'] = Link::orderBy("id","desc")->paginate(12);
         $data['pageTitle'] = 'Link Article';
 
         return view('link.index',$data);
@@ -116,3 +116,4 @@ class LinkController extends Controller
         //
     }
 }
+
