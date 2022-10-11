@@ -54,7 +54,7 @@ class LinkController extends Controller
         $link->description = $request->description;
         $link->author = $request->author;
         $link->resource_url = $request->resource_url;
-        $link->status = 1;
+        $link->status = 0;
 
         if($link){
             return redirect()->route('index')->with('success','Successfully added new Link');
