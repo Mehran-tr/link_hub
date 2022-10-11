@@ -36,6 +36,7 @@ class LinkController extends Controller
      */
     public function create() :View
     {
+
         $data['pageTitle'] = 'Add new Link';
         return view('link.add',$data);
     }
@@ -65,7 +66,7 @@ class LinkController extends Controller
     public function redirect($id)
     {
         $link = Link::find($id);
-        $link->total_click = +1;
+        $link->total_click = $link->total_click+1;
         $link->save();
         return Redirect::to($link->resource_url);
     }

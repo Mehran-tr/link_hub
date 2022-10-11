@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\LinkController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +11,5 @@ use \App\Http\Controllers\LinkController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/redirect/{id}',[LinkController::class, 'redirect'])->name('redirect');
-Route::resource('/', LinkController::class);
+Route::resource('/', App\Http\Controllers\LinkController::class);
+Route::get('/redirect/{id}', [App\Http\Controllers\LinkController::class,'redirect'])->name('redirect');
