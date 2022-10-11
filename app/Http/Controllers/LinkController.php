@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Link;
 use App\Http\Requests\StoreLinkRequest;
 use App\Http\Requests\UpdateLinkRequest;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
 class LinkController extends Controller
@@ -47,7 +48,26 @@ class LinkController extends Controller
      */
     public function store(StoreLinkRequest $request)
     {
-        dd($request->all());
+        $link = new Link();
+        $link->title = $request->title;
+        $link->description = $request->description;
+        $link->author = $request->author;
+        $link->resource_url = $request->resource_url;
+        $link->status = 1;
+
+        if($link){
+            return redirect()->route('index')->with('success','Successfully added new Link');
+        }
+            return back()->with('danger','Error while adding new link');
+
+    }
+
+    public function redirect($id)
+    {
+        $link = Link::find($id);
+        $link->total_click = +1;
+        $link->save();
+        return Redirect::to($link->resource_url);
     }
 
     /**

@@ -12,5 +12,5 @@ use \App\Http\Controllers\LinkController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/redirect/{id}',[LinkController::class, 'redirect'])->name('redirect');
 Route::resource('/', LinkController::class);

@@ -25,9 +25,23 @@ class StoreLinkRequest extends FormRequest
     {
         return [
             "title"          => "required|string|min:3",
-            "description"    => "required|string",
             "author"         => "required|string|min:5",
             "resource_url"   => "required|string",
+        ];
+    }
+
+
+    /**
+     * Custom message for validation
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'title.required' => 'Title must at least 3 characters!',
+            'author.required' => 'Author title must at least 3 characters!',
+            'resource_url.required' => 'URL not formatted correctly!'
         ];
     }
 }

@@ -106,11 +106,37 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
+                @if ($message = Session::get('success'))
+                    <div  class="alert alert-success" role="alert">
+                        <div style="margin: 5px" class="alert-icon"><i class="flaticon-warning"></i></div>
+                        <div class="alert-text">{{ $message }}</div>
+                        <div class="alert-close">
+
+                        </div>
+                    </div>
+                @elseif($message = Session::get('danger'))
+                    <div  class="alert alert-danger" role="alert">
+                        <div style="margin: 5px" class="alert-icon"><i class="flaticon-warning"></i></div>
+                        <div class="alert-text">{{ $message }}</div>
+                        <div class="alert-close">
+
+                        </div>
+                    </div>
+                @endif
+
+
                 <h1 class="fw-light">+ {{$linkCount}} {{$headerTitle}}</h1>
                 <p class="lead text-muted">{{$headerText}}</p>
                 <p>
-                    <a href="{{route('create')}}" class="btn btn-primary my-2">Submit New Article</a>
-                    <a href="#" class="btn btn-secondary my-2">Donate US</a>
+                    <a href="{{route('create')}}" class="btn btn-primary my-2">
+                        <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/></svg>
+                        Submit New Article</a>
+                    <a target="_blank" href="https://www.buymeacoffee.com/laravelarticle" class="btn btn-secondary my-2">
+                        <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.197 0l-1.619 3.735h-2.407v3.359h0.921l0.943 5.975h-1.473l1.948 10.973 1.249-0.015 1.256 7.973h11.891l0.083-0.531 1.172-7.443 1.188 0.015 1.943-10.973h-1.407l0.937-5.975h1.011v-3.359h-2.557l-1.625-3.735zM9.901 1.073h12.057l1.025 2.375h-14.115zM6.235 4.803h19.525v1.228h-19.525zM6.839 14.136h18.183l-1.568 8.823-7.536-0.079-7.511 0.079z"/>
+                        </svg>
+                        Buy me a coffee
+                    </a>
                 </p>
             </div>
         </div>
