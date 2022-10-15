@@ -20,7 +20,7 @@ class LinkController extends Controller
     public function index(): View
     {
 
-        $data['links'] = Link::orderBy("id","desc")->paginate(12);
+        $data['links'] = Link::orderBy("id","desc")->where("status",1)->paginate(12);
         $data['pageTitle'] = 'Link Article';
 
         return view('link.index',$data);
@@ -55,8 +55,9 @@ class LinkController extends Controller
         $link->author = $request->author;
         $link->resource_url = $request->resource_url;
         $link->status = 0;
+        
 
-        if($link){
+        if($link->save()){
             return redirect()->route('index')->with('success','Successfully added new Link');
         }
             return back()->with('danger','Error while adding new link');
